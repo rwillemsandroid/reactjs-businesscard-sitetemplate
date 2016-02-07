@@ -19045,6 +19045,11 @@ var Card = React.createClass({
     };
     var headerStyle = {};
 
+    var footerStyle = {
+      textAlign: 'center',
+      color: 'gray'
+    };
+
     if (this.props.headerColor) {
       headerStyle.background = this.props.headerColor;
     }
@@ -19073,7 +19078,7 @@ var Card = React.createClass({
           ),
           React.createElement(
             'div',
-            { className: 'panel-footer' },
+            { style: footerStyle, className: 'panel-footer' },
             this.props.footerText
           )
         )
@@ -19090,25 +19095,29 @@ var HeaderText = require('./HeaderText.jsx');
 var SubHeaderText = require('./SubHeaderText.jsx');
 
 var Header = React.createClass({
-    displayName: 'Header',
+  displayName: 'Header',
 
-    render: function () {
-        return React.createElement(
-            'div',
-            { className: 'row' },
-            React.createElement(
-                'div',
-                { className: 'col-sm-3' },
-                React.createElement('img', { className: 'img img-circle img-responsive', src: this.props.image })
-            ),
-            React.createElement(
-                'div',
-                { className: 'col-sm-9' },
-                React.createElement(HeaderText, { text: this.props.header }),
-                React.createElement(SubHeaderText, { text: this.props.subHeader })
-            )
-        );
-    }
+  render: function () {
+
+    var imageStyle = {
+      margin: 10
+    };
+    return React.createElement(
+      'div',
+      { className: 'row' },
+      React.createElement(
+        'div',
+        { className: 'col-sm-3' },
+        React.createElement('img', { style: imageStyle, className: 'img img-circle img-responsive', src: this.props.image })
+      ),
+      React.createElement(
+        'div',
+        { className: 'col-sm-9' },
+        React.createElement(HeaderText, { text: this.props.header }),
+        React.createElement(SubHeaderText, { text: this.props.subHeader })
+      )
+    );
+  }
 });
 
 module.exports = Header;
@@ -19238,7 +19247,7 @@ var Card = require('./components/Card.jsx');
 ReactDOM.render(React.createElement(Card, {
   title: 'Raf Willems',
   subTitle: 'Mobile Solutions Engineer',
-  footerText: 'Made with <3 by @RW_Spaf',
+  footerText: 'Trying to make the world a better place, one bug at a time...',
   image: './image/raf_suitup.jpg' }), document.getElementById('content'));
 
 },{"./components/Card.jsx":159,"react":158,"react-dom":2}]},{},[165]);

@@ -10,6 +10,11 @@ var Card = React.createClass({
     };
     var headerStyle={};
 
+    var footerStyle ={
+      textAlign: 'center',
+      color: 'gray'
+    };
+
     if(this.props.headerColor){
       headerStyle.background=this.props.headerColor;
     }
@@ -29,7 +34,7 @@ var Card = React.createClass({
                 <SocialList />
             </div>
 
-            <div className="panel-footer">
+            <div style ={footerStyle} className="panel-footer">
               {this.props.footerText}
             </div>
           </div>
