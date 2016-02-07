@@ -7,8 +7,9 @@ var Card = React.createClass({
     render: function () {
 
         var divStyle = {
-            marginTop: 10
+            marginTop: 20
         };
+
         var headerStyle = {};
 
         var footerStyle = {
@@ -41,7 +42,7 @@ var Card = React.createClass({
                                 <div className="col-sm-12">
 
                                   <p>Hello, my name is Raf, a software engineer based in Belgium.</p>
-                                  <p>During the last couple of years, I've occupied myselfs developing state of the art mobile applications for all major platforms with Android on top. </p>
+                                  <p>During the last couple of years, I've occupied myself developing state of the art mobile applications for all major platforms with Android on top. </p>
                                   <p>Next to pure native development (Java, Objective-C, C#, ...), I'm taking my first steps into Facebooks ReactNative framework and have an interest into networking & software security.</p>
                                   <p>For my latest bio, feel free to visit me on LinkedIn or find me on Twitter.</p>
 

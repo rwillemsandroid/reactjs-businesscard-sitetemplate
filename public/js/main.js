@@ -19042,8 +19042,9 @@ var Card = React.createClass({
     render: function () {
 
         var divStyle = {
-            marginTop: 10
+            marginTop: 20
         };
+
         var headerStyle = {};
 
         var footerStyle = {
@@ -19098,7 +19099,7 @@ var Card = React.createClass({
                                 React.createElement(
                                     'p',
                                     null,
-                                    'During the last couple of years, I\'ve occupied myselfs developing state of the art mobile applications for all major platforms with Android on top. '
+                                    'During the last couple of years, I\'ve occupied myself developing state of the art mobile applications for all major platforms with Android on top. '
                                 ),
                                 React.createElement(
                                     'p',
