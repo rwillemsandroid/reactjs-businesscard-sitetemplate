@@ -19034,62 +19034,132 @@ module.exports = require('./lib/React');
 var React = require('react');
 var Header = require('./Header.jsx');
 var SocialList = require('./SocialList.jsx');
+var ContentTitle = require('./ContentTitle.jsx');
 
 var Card = React.createClass({
-  displayName: 'Card',
+    displayName: 'Card',
 
-  render: function () {
+    render: function () {
 
-    var divStyle = {
-      marginTop: 10
-    };
-    var headerStyle = {};
+        var divStyle = {
+            marginTop: 10
+        };
+        var headerStyle = {};
 
-    var footerStyle = {
-      textAlign: 'center',
-      color: 'gray'
-    };
+        var footerStyle = {
+            textAlign: 'center',
+            color: 'gray'
+        };
 
-    if (this.props.headerColor) {
-      headerStyle.background = this.props.headerColor;
+        if (this.props.headerColor) {
+            headerStyle.background = this.props.headerColor;
+        }
+
+        return React.createElement(
+            'div',
+            { className: 'row' },
+            React.createElement('div', { className: 'col-sm-2' }),
+            React.createElement(
+                'div',
+                { style: divStyle, className: 'col-sm-8' },
+                React.createElement(
+                    'div',
+                    { className: 'panel panel-default' },
+                    React.createElement(
+                        'div',
+                        { style: headerStyle, className: 'panel-heading' },
+                        React.createElement(Header, { image: this.props.image,
+                            header: this.props.title,
+                            subHeader: this.props.subTitle })
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'panel-body' },
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-12' },
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'Hello, my name is Raf, a software engineer based in Belgium.'
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'During the last couple of years, I\'ve occupied myselfs developing state of the art mobile applications for all major platforms with Android on top. '
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'Next to pure native development (Java, Objective-C, C#, ...), I\'m taking my first steps into Facebooks ReactNative framework and have an interest into networking & software security.'
+                                ),
+                                React.createElement(
+                                    'p',
+                                    null,
+                                    'For my latest bio, feel free to visit me on LinkedIn or find me on Twitter.'
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-12' },
+                                React.createElement(ContentTitle, { text: 'Contact' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(SocialList, null)
+                        )
+                    ),
+                    React.createElement(
+                        'div',
+                        { style: footerStyle, className: 'panel-footer' },
+                        this.props.footerText
+                    )
+                )
+            )
+        );
     }
-
-    return React.createElement(
-      'div',
-      { className: 'row' },
-      React.createElement('div', { className: 'col-sm-2' }),
-      React.createElement(
-        'div',
-        { style: divStyle, className: 'col-sm-8' },
-        React.createElement(
-          'div',
-          { className: 'panel panel-default' },
-          React.createElement(
-            'div',
-            { style: headerStyle, className: 'panel-heading' },
-            React.createElement(Header, { image: this.props.image,
-              header: this.props.title,
-              subHeader: this.props.subTitle })
-          ),
-          React.createElement(
-            'div',
-            { className: 'panel-body' },
-            React.createElement(SocialList, null)
-          ),
-          React.createElement(
-            'div',
-            { style: footerStyle, className: 'panel-footer' },
-            this.props.footerText
-          )
-        )
-      )
-    );
-  }
 });
 
 module.exports = Card;
 
-},{"./Header.jsx":160,"./SocialList.jsx":162,"react":158}],160:[function(require,module,exports){
+},{"./ContentTitle.jsx":160,"./Header.jsx":161,"./SocialList.jsx":163,"react":158}],160:[function(require,module,exports){
+var React = require('react');
+
+var ContentTitle = React.createClass({
+  displayName: 'ContentTitle',
+
+  getDefaultProps: function () {
+    return {
+      text: ''
+    };
+  },
+  render: function () {
+    var titleStyle = {};
+
+    if (this.props.textAlign) {
+      titleStyle.textAlign = this.props.textAlign;
+    }
+
+    return React.createElement(
+      'h4',
+      { style: titleStyle },
+      this.props.text
+    );
+  }
+});
+
+module.exports = ContentTitle;
+
+},{"react":158}],161:[function(require,module,exports){
 var React = require('react');
 var HeaderText = require('./HeaderText.jsx');
 var SubHeaderText = require('./SubHeaderText.jsx');
@@ -19122,7 +19192,7 @@ var Header = React.createClass({
 
 module.exports = Header;
 
-},{"./HeaderText.jsx":161,"./SubHeaderText.jsx":164,"react":158}],161:[function(require,module,exports){
+},{"./HeaderText.jsx":162,"./SubHeaderText.jsx":165,"react":158}],162:[function(require,module,exports){
 var React = require('react');
 
 var HeaderText = React.createClass({
@@ -19144,7 +19214,7 @@ var HeaderText = React.createClass({
 
 module.exports = HeaderText;
 
-},{"react":158}],162:[function(require,module,exports){
+},{"react":158}],163:[function(require,module,exports){
 var React = require('react');
 var SocialListItem = require('./SocialListItem.jsx');
 
@@ -19174,7 +19244,7 @@ var SocialList = React.createClass({
 
 module.exports = SocialList;
 
-},{"./SocialListItem.jsx":163,"react":158}],163:[function(require,module,exports){
+},{"./SocialListItem.jsx":164,"react":158}],164:[function(require,module,exports){
 var React = require('react');
 
 var SocialListItem = React.createClass({
@@ -19216,7 +19286,7 @@ var SocialListItem = React.createClass({
 
 module.exports = SocialListItem;
 
-},{"react":158}],164:[function(require,module,exports){
+},{"react":158}],165:[function(require,module,exports){
 var React = require('react');
 
 var SubHeaderText = React.createClass({
@@ -19239,7 +19309,7 @@ var SubHeaderText = React.createClass({
 
 module.exports = SubHeaderText;
 
-},{"react":158}],165:[function(require,module,exports){
+},{"react":158}],166:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Card = require('./components/Card.jsx');
@@ -19250,4 +19320,4 @@ ReactDOM.render(React.createElement(Card, {
   footerText: 'Trying to make the world a better place, one bug at a time...',
   image: './image/raf_suitup.jpg' }), document.getElementById('content'));
 
-},{"./components/Card.jsx":159,"react":158,"react-dom":2}]},{},[165]);
+},{"./components/Card.jsx":159,"react":158,"react-dom":2}]},{},[166]);
