@@ -32,11 +32,11 @@ var Card = React.createClass({
                                     subHeader={this.props.subTitle}/>
                         </div>
                         <div className="panel-body">
-                            {/*<div className="row">
+                            <div className="row">
                                 <div className="col-sm-12">
                                     <ContentTitle text="About me"></ContentTitle>
                                 </div>
-                            </div>*/}
+                            </div>
                             <div className="row">
                                 <div className="col-sm-12">
 

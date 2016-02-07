@@ -19081,6 +19081,15 @@ var Card = React.createClass({
                             React.createElement(
                                 'div',
                                 { className: 'col-sm-12' },
+                                React.createElement(ContentTitle, { text: 'About me' })
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'row' },
+                            React.createElement(
+                                'div',
+                                { className: 'col-sm-12' },
                                 React.createElement(
                                     'p',
                                     null,
